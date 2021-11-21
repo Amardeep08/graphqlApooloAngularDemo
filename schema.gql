@@ -1,0 +1,18 @@
+type Platform {
+  id: String!
+#   text: String!
+}
+
+type Query {
+#   message(id: ID!): Message
+  GetPlatform: [Platform!]
+}
+
+type Mutation {
+  AddPlatformAsync(title: Platform!): Platform
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

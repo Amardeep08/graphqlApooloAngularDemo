@@ -1,0 +1,26 @@
+
+<p style="font-weight: bold; ">
+Query used for below results
+</p>
+<textarea readonly style="font-style:italic ; width: 500px ;height :500 px">
+{{queryGQL}}
+</textarea>
+
+<br>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">name</th>
+        <th scope="col">commands as Json</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let platform of platforms">        
+        <td>{{platform.id}}</td>
+        <td>{{platform.name}}</td>
+        <td>{{platform.commands | json}}</td>
+        
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,34 @@
+<form [formGroup]="platformForm" (ngSubmit)="onSubmit()">
+    <div>
+        <h2>New Platform</h2>
+
+        <label for="name">Name: </label>
+        <input id="name" type="text" formControlName="name">
+
+        <!-- <label for="body">Body: </label>
+    <input id="body" type="text" formControlName="body"> -->
+
+    </div>
+
+    <button type="submit" [disabled]="!platformForm.valid">Submit</button>
+</form>
+
+
+<form [formGroup]="commandForm" (ngSubmit)="onAddingCommand()">
+    <div>
+        <h2>Add Command</h2>
+
+        <label for="commandLine">commandLine: </label>
+        <input id="commandLine" type="text" formControlName="commandLine">
+        <label for="howTo">howTo: </label>
+        <input id="howTo" type="text" formControlName="howTo">
+        <label for="platformId">platform:</label>
+        <select formControlName="platformId" class="form-control" (change)="changePlatform($event)">
+            <option disabled>Select platform</option>
+            <option *ngFor="let plat of platformList" value="{{plat.id}}">{{plat.name}}</option>
+        </select>
+        
+    </div>    
+
+    <button type="submit" [disabled]="!commandForm.valid">Submit</button>
+</form>
